@@ -10,26 +10,52 @@ class Program
 
         int numberGrade = int.Parse(grade);
 
+        string letterGrade = "";
+        string gradeModifier = "";
+
+        // determine the letter grade
         if (numberGrade >= 90)
         {
-            Console.WriteLine("Your grade is an A");
+            letterGrade = "A";
         }
         else if (numberGrade >= 80)
         {
-            Console.WriteLine("Your grade is a B");
+            letterGrade = "B";
         }
         else if (numberGrade >= 70)
         {
-            Console.WriteLine("Your grade is an C");
+            letterGrade = "C";
         }
         else if (numberGrade >= 60)
         {
-            Console.WriteLine("Your grade is an D");
+            letterGrade = "D";
         }
         else
         {
-            Console.WriteLine("Your grade is an F");
+            letterGrade = "F";
         }
+
+        // determine the grade modifier (ie +,-)
+        // preserve cases of A+, F+, and F-
+        if (numberGrade >= 97 || numberGrade < 60)
+        {
+            gradeModifier = "";
+        }
+        else if (numberGrade % 10 >= 7)
+        {
+            gradeModifier = "+";
+        }
+        else if (numberGrade % 10 < 3)
+        {
+            gradeModifier = "-";
+        }
+        else
+        {
+            gradeModifier = "";
+        }
+        
+
+        Console.WriteLine($"Your current grade is: {letterGrade}{gradeModifier}");
 
         if (numberGrade >= 70)
         {
