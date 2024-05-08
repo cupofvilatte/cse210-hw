@@ -1,0 +1,19 @@
+Resume--List<Job>
+infinite Job
+
+loop through list of jobs. format and print nicely
+
+UML diagram: Big box. Should be a box for each class. And then you start linking boxes. use draw.io
+________________
+|    Name      |
+|--------------|
+|props. attr.  | -> in our learning 2 example was givenName, familyName
+|--------------|
+|methods       | -> in our learning 2 example was Eastern and Western style names
+|______________|
+
+Decision Table:
+
+Flow Chart:
+ - chart that shows the flow of a Program
+ - shows the order that the program reads
