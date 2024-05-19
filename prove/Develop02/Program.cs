@@ -6,9 +6,11 @@ class Program
     static void Main(string[] args)
     {
         Journal journal = new Journal();
-        List<string> menu = ["Write", "Display", "Load", "Save", "Quit"];
+        List<string> menu = ["Write", "Display", "Load", "Save", "Delete", "Quit"];
 
         Console.WriteLine("Welcome to the Journal App! You will be able to respond to prompts, save, and view your entries.");
+
+
 
         while (true) {
         for (int i = 0; i < menu.Count; i++)
@@ -34,8 +36,11 @@ class Program
                 journal.SaveJournal();
                 break;
             case 5:
-                Console.WriteLine("x");
+                journal.DeleteEntry();
                 break;
+            case 6:
+                Console.WriteLine("Exiting");
+                return;
         }
         }
     }
