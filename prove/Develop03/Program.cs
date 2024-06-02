@@ -1,5 +1,6 @@
 using System;
 
+// Stretch: a unique 3 words are hidden each round of the activity. I basically create a list of visible index numbers. When the index isn't found for a word, it's replaced with the strings. This just ensures the activity will not have rounds with few or no new missing words. It also means the practice takes the same amount of turns each time it is run, while still maintaining randomness of which words disappear.
 class Program
 {
     static void Main(string[] args)
