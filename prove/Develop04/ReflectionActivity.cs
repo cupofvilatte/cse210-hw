@@ -27,8 +27,8 @@ class ReflectionActivity : Activity {
     public override void RunActivity() {
         int duration = ActivityIntro();
 
-        int primaryDuration = duration / 3000;
-        int secondaryDuration = (duration * 2) / 3000;
+        int primaryDuration = duration / 2000;
+        int secondaryDuration = duration / 4000;
 
         Random random = new Random();
 
