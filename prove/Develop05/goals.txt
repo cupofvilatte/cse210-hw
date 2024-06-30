@@ -1,3 +1,4 @@
-SimpleGoal,Be Happy,Get to know myself,100,False
-ChecklistGoal,Run a mile,Run a mile and get faster,30,False,3,0
+9
+SimpleGoal,Be Happy,Get to know myself,100,True
+ChecklistGoal,Run a mile,Run a mile and get faster,30,False,3,1
 EternalGoal,Love Chandler,Give him the world every day,500,False

@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using System.IO;
 
 class Program
 {
@@ -29,8 +31,21 @@ class Program
                     return new EternalGoal(name, description, value);
                 default:
                     throw new Exception("Unknown goal type");
+            }
         }
-    }
+
+        static List<string> LoadGoalsFromFile(string filename) {
+        
+        List<string> goalStrings = new List<string>();
+
+        string[] lines = File.ReadAllLines(filename);
+        foreach (string line in lines)
+        {
+            goalStrings.Add(line);
+        }
+        Console.WriteLine("Goals loaded successfully.");
+        return goalStrings;
+        }
 
 
         bool quit = false;
@@ -89,19 +104,41 @@ class Program
                 case "3":
                     // save goals
                     Console.Write("Enter a filename to save to: ");
-                    string filename = Console.ReadLine();
+                    string saveFilename = Console.ReadLine();
 
-                    using (StreamWriter writer = new StreamWriter(filename))
+                    using (StreamWriter writer = new StreamWriter(saveFilename))
                     {
+                        writer.WriteLine(totalScore);
+
                         foreach (var goal in GoalsList)
                         {
                             writer.WriteLine(goal.ToString());
                         }
                     }
+                    Console.WriteLine("Save successful!");
                     break;
                 case "4":
                     // load goals
-                    LoadGoal();
+                    Console.Write("Enter a filename to load from: ");
+                    string loadFilename = Console.ReadLine();
+
+                    List<string> goalStrings = LoadGoalsFromFile(loadFilename);
+                    
+                    if (goalStrings.Count > 0) {
+                        if (int.TryParse(goalStrings[0], out int totalLoadedScore)) {
+                            totalScore = totalLoadedScore;
+                            Console.WriteLine($"Your score is {totalLoadedScore}.");
+                            goalStrings.RemoveAt(0);
+                        } else {
+                            Console.WriteLine("Score Parsing Failed");
+                            break;
+                        }
+
+                    foreach (string goalString in goalStrings) {
+                        Goal goal = LoadGoal(goalString);
+                        GoalsList.Add(goal);
+                    }
+                    }
                     
                     break;
                 case "5":
