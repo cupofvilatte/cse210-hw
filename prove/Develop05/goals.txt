@@ -2,3 +2,4 @@
 SimpleGoal,Be Happy,Get to know myself,100,True
 ChecklistGoal,Run a mile,Run a mile and get faster,30,False,3,1
 EternalGoal,Go to the temple,Worship God,500,False
+SimpleGoal,Get some sleep,Its not rocket science,100,False
