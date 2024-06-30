@@ -1,4 +1,4 @@
 9
 SimpleGoal,Be Happy,Get to know myself,100,True
 ChecklistGoal,Run a mile,Run a mile and get faster,30,False,3,1
-EternalGoal,Love Chandler,Give him the world every day,500,False
+EternalGoal,Go to the temple,Worship God,500,False
