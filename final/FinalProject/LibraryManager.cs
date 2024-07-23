@@ -29,8 +29,8 @@ class LibraryManager {
         bool quit = false;
         while (!quit){
             Console.WriteLine($"Library Manager Menu ------- {holder.Name}");
-            Console.WriteLine("1. Check In Book");
-            Console.WriteLine("2. Check Out Book");
+            Console.WriteLine("1. Check In Item");
+            Console.WriteLine("2. Check Out Item");
             Console.WriteLine("3. View Total Inventory");
             Console.WriteLine("4. View Holds");
             Console.WriteLine("5. View Checked Out Items");
