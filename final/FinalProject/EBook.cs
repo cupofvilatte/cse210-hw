@@ -6,10 +6,11 @@ class EBook : Book {
     }
 
     public override void CheckOut() {
-
+        checkedOut = false;
+        dueDate = DateOnly.FromDateTime(DateTime.Now.AddDays(14));
     }
 
     public override void CheckIn() {
-
+        base.CheckIn();
     }
 }

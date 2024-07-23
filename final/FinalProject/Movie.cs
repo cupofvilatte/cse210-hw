@@ -11,7 +11,8 @@ class Movie : LibraryItem {
 
     public override void CheckOut()
     {
-        base.CheckOut();
+        checkedOut = true;
+        dueDate = DateOnly.FromDateTime(DateTime.Now.AddDays(7));;
     }
 
     public override void CheckIn()

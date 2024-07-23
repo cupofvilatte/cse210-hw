@@ -1,7 +1,10 @@
+using System;
+using Microsoft.VisualBasic;
 abstract class LibraryItem {
     protected string title;
     protected int itemID;
-    protected bool checkedOut;
+    public bool checkedOut { get; set;}
+    public DateOnly? dueDate { get; protected set; }
 
     public string Title
     {
@@ -22,13 +25,16 @@ abstract class LibraryItem {
         this.title = title;
         this.itemID = itemID;
         this.checkedOut = false;
+        this.dueDate = null;
     }
 
     public virtual void CheckOut() {
         checkedOut = true;
+        dueDate = DateOnly.FromDateTime(DateTime.Now.AddDays(14));
     }
 
     public virtual void CheckIn() {
         checkedOut = false;
+        dueDate = null;
     }
 }
