@@ -1,0 +1,25 @@
+Welcome to the Library Application!
+
+Some things to keep in mind:
+- The target user for this app is the Librarian, who should be able to have access to the items checked in by multiple accounts
+
+- For testing, it may be useful to choose view total inventory first to get acquainted with some of the options available for borrowing. The application functions by typing the titles into the program. This is because the program is designed with a large selection of titles, and it would become clunky to print a list and capture the index
+
+Notes on the 4 Main Principles:
+There are several examples of the principles throughout the app. One example of each is...
+
+Abstraction -> Each class handles responsibilities particular to itself. There is a LibraryManager.cs class to handle the convergence of LibraryCardHolders and LibraryItems while maintaining neat abstraction.
+
+Encapsulation -> All the variables are private (although in some cases a shortcut is used for getters and setters, to accommodate the significant amount of variables present for some of the entities). Member variables of parent classes are protected.
+
+Inheritance -> This program uses several child classes, and even a few child-child classes (layered inheritance). This is reflected heavily where many of the classes have extensive details, but most are inherited. For example, the HardCopy.cs class has this constructor:
+
+public HardCopy(string title, int itemID, string author, int pageCount, string copyrightDate, string genre, double weight, bool isHardcover) : base(title, itemID, author, pageCount, copyrightDate, genre) {
+        this.weight = weight;
+        this.isHardcover = isHardcover;
+    }
+
+Over half the variables in this constructor are inherited.
+
+
+Polymorphism -> The CheckOut Method used by all the LibraryItems engages Polymorphism. In some cases it changes how the checkedOut variable is altered. Most popularly, it handles specific cases for the length that items may be checked out before becoming overdue.
